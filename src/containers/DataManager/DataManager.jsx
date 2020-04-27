@@ -1,11 +1,14 @@
 import React from 'react'
+import { getMatchById } from "../../api/api"
 
+const DataManager = () => {
+    getMatchById()
 
-export default function DataManager() {
-  return (
-    <div>
-      manager
-    </div>
-  )
+    return <div>manager</div>
 }
+
+
+
+
+export default DataManager;
 
