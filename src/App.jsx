@@ -1,8 +1,8 @@
 import React from "react";
 
-import DataManager from "./containers/DataManager/DataManager";
 import SearchById from "./components/SearchById/SearchById";
 import Header from "./components/Header/Header";
+import MatchInfo from "./components/MatchInfo/MatchInfo";
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <div>
     <Header/>
     <SearchById/>
-    <DataManager/>
+    <MatchInfo/>
     </div>
     
   </div>

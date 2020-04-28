@@ -1,12 +1,17 @@
-import React, {useState} from 'react'
-import {getMatchById} from '../../api/api'
+import React, { useState } from 'react'
+import { getMatchById } from '../../api/api'
+import MatchInfo from '../MatchInfo/MatchInfo';
 
 const SearchById = () => {
   let [matchId, setMatchId] = useState("");
+  let [matchInfo, setMatchInfo] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getMatchById(matchId);
+      getMatchById(matchId)
+        .then((res) => res.json())
+        .then((data) => setMatchInfo(data))
+        .catch((err) => console.error(err));
   };
 
   return (
@@ -16,9 +21,12 @@ const SearchById = () => {
                                   className='match-id__input'
                                   value={matchId}
                                   onChange={(e) => setMatchId(e.target.value)}/>                                  
-
+                
                                   <button>Search</button>
     </form>
+    <div>
+    {matchInfo && matchId ? <MatchInfo details={matchInfo}/> : null}
+    </div>
     </div>
   )
   }
