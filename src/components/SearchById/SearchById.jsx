@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { getMatchById } from '../../api/api'
 import MatchInfo from '../MatchInfo/MatchInfo';
+import DataManager from '../../containers/DataManager/DataManager';
 
 const SearchById = () => {
   let [matchId, setMatchId] = useState("");
@@ -26,11 +27,10 @@ const SearchById = () => {
     </form>
     <div>
     {matchInfo && matchId ? <MatchInfo details={matchInfo}/> : null}
+    {matchInfo ? <DataManager playersDetails={matchInfo.players}/> : null}
     </div>
     </div>
   )
-  }
-
-  
+}
 
 export {SearchById};
