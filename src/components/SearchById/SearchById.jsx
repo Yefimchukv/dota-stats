@@ -31,4 +31,6 @@ const SearchById = () => {
   )
   }
 
-export default SearchById;
+  
+
+export {SearchById};

@@ -5,4 +5,8 @@ const getMatchById = (matchId) => {
     
 };
 
-export {getMatchById};
+const getPlayerById = (playerById) => {
+  return fetch(`https://api.opendota.com/api/players/${playerById}?api_key=${dotaKey}`)
+}
+
+export {getMatchById, getPlayerById};
