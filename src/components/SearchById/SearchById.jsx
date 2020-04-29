@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { getMatchById } from '../../api/api'
 import MatchInfo from '../MatchInfo/MatchInfo';
 import DataManager from '../../containers/DataManager/DataManager';
-
+  
 const SearchById = () => {
   let [matchId, setMatchId] = useState("");
   let [matchInfo, setMatchInfo] = useState(null);
